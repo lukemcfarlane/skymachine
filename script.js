@@ -15,9 +15,20 @@ function enableDownload() {
 }
 
 function init() {
-    $('.share-link').click(function() {
-        share();
-    });
+    var shareLink = 'https://www.facebook.com/dialog/share_open_graph?' +
+        'app_id=' + FB_APP_ID + '&' +
+        'display=popup' + '&' +
+        'action_type=og.likes' + '&' +
+        'action_properties=' + encodeURIComponent(
+            JSON.stringify({
+                object: OBJECT_TO_LIKE
+            })
+        ) + '&' +
+        'redirect_uri=' + encodeURIComponent(
+            OBJECT_TO_LIKE + 'download.html'
+        );
+
+    $('.share-link').attr('href', shareLink);
 }
 
 $(document).ready(function() {
