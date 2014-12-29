@@ -4,10 +4,9 @@ var FB_APP_ID = '315954451937355';
 function share() {
     FB.ui({
         method: 'share',
-        href: OBJECT_TO_LIKE 
-    }, function(response){
-        console.log('Response:', response);
-    });
+        href: OBJECT_TO_LIKE,
+        redirect_uri: 'download.html'
+    }, function(response){});
 }
 
 function enableDownload() {
