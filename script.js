@@ -1,12 +1,30 @@
 var OBJECT_TO_LIKE = 'http://lukemcfarlane.github.io/skymachine/';
 var FB_APP_ID = '315954451937355';
 
+function login() {
+    FB.login(function(response) {
+        if (response.authResponse) {
+            console.log('Welcome!  Fetching your information.... ');
+            FB.api('/me', function(response) {
+                console.log('Good to see you, ' + response.name + '.');
+            });
+            share();
+        } else {
+            console.log('User cancelled login or did not fully authorize.');
+        }
+    }, {
+        scope: 'publish_actions',
+        return_scopes: true
+    });
+}
+
 function share() {
     FB.ui({
         method: 'share',
-        href: OBJECT_TO_LIKE,
-        redirect_uri: 'download.html'
-    }, function(response){});
+        href: OBJECT_TO_LIKE
+    }, function(response){
+        debugger
+    });
 }
 
 function enableDownload() {
@@ -15,20 +33,9 @@ function enableDownload() {
 }
 
 function init() {
-    var shareLink = 'https://www.facebook.com/dialog/share_open_graph?' +
-        'app_id=' + FB_APP_ID + '&' +
-        'display=popup' + '&' +
-        'action_type=og.likes' + '&' +
-        'action_properties=' + encodeURIComponent(
-            JSON.stringify({
-                object: OBJECT_TO_LIKE
-            })
-        ) + '&' +
-        'redirect_uri=' + encodeURIComponent(
-            OBJECT_TO_LIKE + 'download.html'
-        );
-
-    $('.share-link').attr('href', shareLink);
+    $('.share-link').click(function() {
+        login();
+    });
 }
 
 $(document).ready(function() {
