@@ -1,5 +1,6 @@
 var OBJECT_TO_LIKE = 'http://lukemcfarlane.github.io/skymachine/';
 var FB_APP_ID = '315954451937355';
+var DL_URL = '/Getaway.zip';
 
 function login() {
     FB.login(function(response) {
@@ -28,13 +29,17 @@ function share() {
 }
 
 function enableDownload() {
-    $('.download-link').show();
     $('.share-link').hide();
+    $('p.dl-confirm').show();
+    setTimeout(function() {
+        window.location.href = DL_URL;
+    }, 1 * 1000);
 }
 
 function init() {
     $('.share-link').click(function() {
-        login();
+        // login();
+        enableDownload();
     });
 }
 

@@ -1,5 +1,168 @@
-.share-link {
+@font-face {
+    font-family: futura;
+    src: url(../futura.ttc);
+    font-weight:500;
 }
 
-.download-link {
+.skymachinemain{
+    visibility:visible;
+    display:block !important;
+}
+
+html,body{
+    height:100%;
+}
+body{
+    overflow-x: hidden;
+    /*overflow:hidden;*/    
+    background-image:url(../images/skymachine2bg.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+#gradient{
+    position: fixed;
+    height:145px;
+    width:100%;
+    top:0;
+    left:0;
+    background-image:url(../images/gradient.png);
+}
+#content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*height: 100%;*/
+    width: 100%;
+    color: #ebebea;
+    text-align: center;
+    overflow:hidden;
+    font-family: "futura",sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    text-transform: uppercase;
+    overflow-x: hidden;
+
+}
+#content .top, #content .bottom{    
+    position: static;
+    width: 100%;
+}
+.top{    
+    top: 20%;
+    /*background-image:url(../skymachinescript.png);*/
+    background-repeat:no-repeat;
+    background-position: center top;
+}
+
+
+
+.bottom{
+
+    margin-bottom: 20px;
+}
+.title {
+    font-size: 90px;
+    letter-spacing: 4px;
+}
+.subtitle {
+    font-size: 60px;
+    letter-spacing: 4px;
+    line-height: 0.8em;
+}
+.tracks {
+    margin-top: 20px;
+    font-size: 13px;
+}
+.links{
+    font-size:0;
+    margin-top: 30px;
+}
+.link {
+    width: 39px;
+    height: 39px;
+    display: inline-block;
+    margin: 0 32px;
+    background-position: center top;
+    cursor: pointer;
+}
+.link:hover{
+    background-position: center bottom;
+}
+
+
+.link.itunes{
+    background-image:url(../images/icons/icon_apple.png);
+}
+.link.jbhifi{
+    background-image:url(../images/icons/icon_jbhifi.png);
+}
+.link.sanity{
+    background-image:url(../images/icons/icon_sanity.png);
+}
+.link.getmusic{
+    background-image:url(../images/icons/icon_getmusic.png);
+}
+.link.mail{
+    background-image:url(../images/icons/icon_mail.png);
+}
+.link.facebook{
+    background-image:url(../images/icons/icon_facebook.png);
+}
+.link.tumblr{
+    background-image:url(../images/icons/icon_tumblr.png);
+}
+.link.instagram{
+    background-image:url(../images/icons/icon_instagram.png);
+}
+.link.twitter{
+    background-image:url(../images/icons/icon_twitter.png);
+}
+    
+
+.stripe {
+    position: static;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    width: 100%;
+    left: 0px;
+    background-color: transparent;
+}
+
+.header {
+    font-size: 30px;
+    margin: 10px;
+}
+
+.shareme {
+    padding: 10px;
+}
+
+
+
+
+.videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 0px;
+
+    height: 0;
+}
+.videoWrapper iframe {
+    position: static;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 864px;
+    max-height: 486px;
+
+    border: 0px;
+}
+
+.spacer {
+    max-height: 486px;
+    padding-top: 10px;
+    padding-bottom: 2%;
 }
