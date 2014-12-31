@@ -56,7 +56,7 @@ Skymachine.prototype.login = function(callbackFn) {
  *       in using the login function, as well as have the publish_actions 
  *       permission approved for our app on Facebook.
  */
-Skymachine.protoype.share = function(callbackFn) {
+Skymachine.prototype.share = function(callbackFn) {
     FB.ui({
         method: 'share',
         href: this.urlToShare 
@@ -72,7 +72,7 @@ Skymachine.protoype.share = function(callbackFn) {
  *       otherwise some browsers will just open the mp3 file in the
  *       browser itself.
  */
-Skymachine.protype.startDownload = function() {
+Skymachine.prototype.startDownload = function() {
     setTimeout(function() {
         window.location.href = this.downloadUrl;
     }, 1 * 1000); // Start downloading automatically in 1 second
