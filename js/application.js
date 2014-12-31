@@ -1,6 +1,6 @@
 var OBJECT_TO_LIKE = 'http://lukemcfarlane.github.io/skymachine/';
 var FB_APP_ID = '315954451937355';
-var DL_URL = '/Getaway.zip';
+var DL_URL = '/files/Getaway.zip';
 
 
 $(document).ready(function() {
