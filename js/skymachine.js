@@ -77,7 +77,8 @@ Skymachine.prototype.share = function(callbackFn) {
         method: 'share',
         href: this.urlToShare 
     }, function(response){
-        callbackFn(response);
+        var userDidShare = response && !response.error_code;
+        callbackFn(userDidShare);
     });
 };
 
