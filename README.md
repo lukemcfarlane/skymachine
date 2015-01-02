@@ -15,17 +15,6 @@ See demo at http://lukemcfarlane.github.io/skymachine/
 
 * js/lib/jquery-2.1.3.min.js
 
-## Facebook sharing
-
-The response currently does not tell us whether or not the
-user actually completed the share successfully. That is,
-they could just click cancel or close the dialog and we will
-get the same response.
-
-To determine success would require the user to have logged 
-in using the login function, as well as have the publish_actions 
-permission approved for our app on Facebook.
-
 ### Download URL
 
 Currently set to /files/Getaway.zip. Can be changed via line 2 of application.js.

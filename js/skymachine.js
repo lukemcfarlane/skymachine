@@ -60,17 +60,9 @@ Skymachine.prototype.login = function(callbackFn) {
 };
 
 /**
- * Show a Facebook share dialog and call the callback function on
- * complete. 
- *
- * Note: The response currently does not tell us whether or not the
- *       user actually completed the share successfully. That is,
- *       they could just click cancel or close the dialog and we will
- *       get the same response.
- *
- *       To determine success would require the user to have logged 
- *       in using the login function, as well as have the publish_actions 
- *       permission approved for our app on Facebook.
+ * Show a Facebook share dialog that calls a callback function
+ * with boolean value indicating whether or not the user shared
+ * successfully.
  */
 Skymachine.prototype.share = function(callbackFn) {
     FB.ui({
