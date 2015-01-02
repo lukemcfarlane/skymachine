@@ -1,10 +1,17 @@
 /**
+ * Helper class to handle logging in/sharing a URL
+ * via Facebook, and starting an automatic download
+ * of a file.
+ *
  * Usage:
  *  var Skymachine = new Skymachine({
  *      urlToShare: 'http://www.example.com',
  *      fbAppId: 'XXXXXXXXXXXXXXX',
  *      downloadUrl: '/files/myFile.zip'
  *  });
+ * 
+ * @author  http://github.com/lukemcfarlane/
+ * @date    Jan 2015
  */
 var Skymachine = function(options) {
     for(opt in options) {

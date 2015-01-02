@@ -1,3 +1,11 @@
+/**
+ * Automatically start song download after user 
+ * successfully logs in and shares a link via
+ * Facebook.
+ *
+ * @author  http://github.com/lukemcfarlane/
+ * @date    Jan 2015
+ */
 var URL_TO_SHARE = 'https://www.youtube.com/watch?v=SODc_OipAKQ';
 var DOWNLOAD_URL = '/files/Getaway.zip';
 var FB_APP_ID = '315954451937355';
