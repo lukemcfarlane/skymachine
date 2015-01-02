@@ -1,10 +1,12 @@
-var URL_TO_SHARE = '/files/Getaway.zip';
+var URL_TO_SHARE = 'https://www.youtube.com/watch?v=SODc_OipAKQ';
+var DOWNLOAD_URL = '/files/Getaway.zip';
+var FB_APP_ID = '315954451937355';
 
 function init() {
     window.Skymachine = new Skymachine({
-        urlToShare: 'http://lukemcfarlane.github.io/skymachine/',
-        fbAppId: '315954451937355',
-        downloadUrl: URL_TO_SHARE
+        urlToShare: URL_TO_SHARE,
+        fbAppId: FB_APP_ID,
+        downloadUrl: DOWNLOAD_URL 
     });
 
     $('#share-link').click(function() {
