@@ -46,13 +46,8 @@ Skymachine.prototype.initFacebook = function() {
  */
 Skymachine.prototype.login = function(callbackFn) {
     FB.login(function(response) {
-        if (response.authResponse) {
-            FB.api('/me', function(response) {
-                callbackFn('Good to see you, ' + response.name + '.');
-            });
-        } else {
-            callbackFn('User cancelled login or did not fully authorize.');
-        }
+        var success = !!response.authResponse;
+        callbackFn(success);
     }, {
         scope: 'publish_actions',
         return_scopes: true

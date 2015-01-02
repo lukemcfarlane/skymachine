@@ -10,15 +10,19 @@ function init() {
     });
 
     $('#share-link').click(function() {
-        Skymachine.share(function(userDidShare) {
-            if(userDidShare) {
-                Skymachine.startDownload();
-                $('.shareWrapper').html(
-                    '<h2>Thanks!</h2>' +
-                    '<p>The download should start automatically.</p>' +
-                    '<p>If it doesn\'t then please ' + 
-                    '<a href="' + URL_TO_SHARE + '">click here</a></p>.'
-                );
+        Skymachine.login(function(success) {
+            if(success) {
+                Skymachine.share(function(userDidShare) {
+                    if(userDidShare) {
+                        Skymachine.startDownload();
+                        $('.shareWrapper').html(
+                            '<h2>Thanks!</h2>' +
+                            '<p>The download should start automatically.</p>' +
+                            '<p>If it doesn\'t then please ' + 
+                            '<a href="' + URL_TO_SHARE + '">click here</a></p>.'
+                        );
+                    }
+                });
             }
         });
     });
