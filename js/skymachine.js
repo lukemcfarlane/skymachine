@@ -2,12 +2,15 @@ var Skymachine = function(urlToShare, fbAppId, downloadUrl) {
     this.urlToShare = urlToShare; 
     this.fbAppId = fbAppId; 
     this.downloadUrl = downloadUrl;
+
+    this.initFacebook();
 };
 
 Skymachine.prototype.initFacebook = function() {
+    var appId = this.fbAppId;
     window.fbAsyncInit = function() {
         FB.init({
-            appId      : this.fbAppId,
+            appId      : appId,
             status     : true,
             cookie     : true,
             xfbml      : true,
@@ -73,7 +76,8 @@ Skymachine.prototype.share = function(callbackFn) {
  *       browser itself.
  */
 Skymachine.prototype.startDownload = function() {
+    var url = this.downloadUrl;
     setTimeout(function() {
-        window.location.href = this.downloadUrl;
+        window.location.href = url;
     }, 1 * 1000); // Start downloading automatically in 1 second
 };
