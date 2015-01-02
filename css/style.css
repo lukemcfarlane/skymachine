@@ -163,10 +163,10 @@ body{
     /*padding-bottom: 2%;*/
 }
 
-#share-link {
+.shareWrapper a {
     color: #ebebea;
 }
 
-#share-link:hover {
+.shareWrapper a:hover {
     color: white;
 }

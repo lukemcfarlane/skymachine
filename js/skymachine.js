@@ -91,6 +91,6 @@ Skymachine.prototype.share = function(callbackFn) {
 Skymachine.prototype.startDownload = function() {
     var url = this.downloadUrl;
     setTimeout(function() {
-        window.location.href = ur;
+        window.location.href = url;
     }, 1 * 1000); // Start downloading automatically in 1 second
 };
