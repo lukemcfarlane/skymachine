@@ -9,7 +9,6 @@ function init() {
         DL_URL
     );
 
-    debugger
     $('#share-link').click(function() {
         Skymachine.share(function() {
             Skymachine.startDownload();
