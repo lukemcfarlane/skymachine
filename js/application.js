@@ -1,17 +1,14 @@
-var OBJECT_TO_LIKE = 'http://lukemcfarlane.github.io/skymachine/';
-var FB_APP_ID = '315954451937355';
-var DL_URL = '/files/Getaway.zip';
-
 function init() {
-    window.Skymachine = new Skymachine(
-        OBJECT_TO_LIKE,
-        FB_APP_ID,
-        DL_URL
-    );
+    window.Skymachine = new Skymachine({
+        urlToShare: 'http://lukemcfarlane.github.io/skymachine/',
+        fbAppId: '315954451937355',
+        downloadUrl: '/files/Getaway.zip'
+    });
 
     $('#share-link').click(function() {
         Skymachine.share(function() {
             Skymachine.startDownload();
+
         });
     });
 };

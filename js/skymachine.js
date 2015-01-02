@@ -1,7 +1,20 @@
-var Skymachine = function(urlToShare, fbAppId, downloadUrl) {
-    this.urlToShare = urlToShare; 
-    this.fbAppId = fbAppId; 
-    this.downloadUrl = downloadUrl;
+// var Skymachine = function(urlToShare, fbAppId, downloadUrl) {
+var Skymachine = function(options) {
+    for(opt in options) {
+        switch(opt) {
+            case 'urlToShare':
+                this.urlToShare = options[opt];
+                break;
+            case 'fbAppId':
+                this.fbAppId = options[opt];
+                break;
+            case 'downloadUrl':
+                this.downloadUrl = options[opt];
+                break;
+            default:
+                throw new Error('Unsupported option: \'' + opt + '\'');
+        }
+    }
 
     this.initFacebook();
 };
@@ -78,6 +91,6 @@ Skymachine.prototype.share = function(callbackFn) {
 Skymachine.prototype.startDownload = function() {
     var url = this.downloadUrl;
     setTimeout(function() {
-        window.location.href = url;
+        window.location.href = ur;
     }, 1 * 1000); // Start downloading automatically in 1 second
 };
