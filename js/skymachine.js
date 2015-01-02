@@ -1,4 +1,11 @@
-// var Skymachine = function(urlToShare, fbAppId, downloadUrl) {
+/**
+ * Usage:
+ *  var Skymachine = new Skymachine({
+ *      urlToShare: 'http://www.example.com',
+ *      fbAppId: 'XXXXXXXXXXXXXXX',
+ *      downloadUrl: '/files/myFile.zip'
+ *  });
+ */
 var Skymachine = function(options) {
     for(opt in options) {
         switch(opt) {
