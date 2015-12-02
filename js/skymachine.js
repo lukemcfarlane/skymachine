@@ -89,7 +89,7 @@ Skymachine.prototype.share = function(callbackFn) {
 Skymachine.prototype.feed = function(callbackFn) {
   FB.ui({
       method: 'feed',
-      source: 'http://www.youtube.com/v/'+this.youtubeCode,
+      source: 'http://www.youtube.com/watch?v='+this.youtubeCode,
       picture: 'http://img.youtube.com/vi/'+this.youtubeCode+'/default.jpg',
       link: 'http://www.youtube.com/watch?v='+this.youtubeCode
   }, function(response){
