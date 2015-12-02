@@ -9,15 +9,15 @@
  *      fbAppId: 'XXXXXXXXXXXXXXX',
  *      downloadUrl: '/files/myFile.zip'
  *  });
- * 
+ *
  * @author  http://github.com/lukemcfarlane/
  * @date    Jan 2015
  */
 var Skymachine = function(options) {
     for(opt in options) {
         switch(opt) {
-            case 'urlToShare':
-                this.urlToShare = options[opt];
+            case 'youtubeCode':
+                this.youtubeCode = options[opt];
                 break;
             case 'fbAppId':
                 this.fbAppId = options[opt];
@@ -36,21 +36,19 @@ var Skymachine = function(options) {
 Skymachine.prototype.initFacebook = function() {
     var appId = this.fbAppId;
     window.fbAsyncInit = function() {
-        FB.init({
-            appId      : appId,
-            status     : true,
-            cookie     : true,
-            xfbml      : true,
-            version    : 'v2.0'
-        });
+      FB.init({
+        appId      : appId,
+        xfbml      : true,
+        version    : 'v2.2'
+      });
     };
 
     (function(d, s, id){
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 };
 
@@ -76,7 +74,7 @@ Skymachine.prototype.login = function(callbackFn) {
 Skymachine.prototype.share = function(callbackFn) {
     FB.ui({
         method: 'share',
-        href: this.urlToShare 
+        href: 'http://www.youtube.com/watch?v='+this.youtubeCode
     }, function(response){
         var userDidShare = response && !response.error_code;
         callbackFn(userDidShare);
@@ -84,8 +82,25 @@ Skymachine.prototype.share = function(callbackFn) {
 };
 
 /**
+* Show a Facebook feed dialog that calls a callback function
+* with boolean value indicating whether or not the user posted
+* successfully.
+*/
+Skymachine.prototype.feed = function(callbackFn) {
+  FB.ui({
+      method: 'feed',
+      source: 'http://www.youtube.com/v/'+this.youtubeCode,
+      picture: 'http://img.youtube.com/vi/'+this.youtubeCode+'/default.jpg',
+      link: 'http://www.youtube.com/watch?v='+this.youtubeCode
+  }, function(response){
+      var userDidShare = response && !response.error_code;
+      callbackFn(userDidShare);
+  });
+};
+
+/**
  * Automatically start the file download.
- * 
+ *
  * Note: The file should be a zip file for it to actually download,
  *       otherwise some browsers will just open the mp3 file in the
  *       browser itself.

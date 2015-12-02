@@ -1,49 +1,91 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Skymachine</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">                
-        
-        <link rel="stylesheet" type="text/css" href="css/style.css" />
-        <script type="text/javascript" src="js/lib/jquery-2.1.3.min.js"></script>
-        <script type="text/javascript" src="js/skymachine.js"></script>
-        <script type="text/javascript" src="js/application.js"></script>
+<head>
+<title>Skymachine</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-        <!-- The following are Facebook open graph metadata tags, and -->
-        <!-- determine how the page looks when shared on Facebook     -->                    
-        <meta property="og:url" content="http://lukemcfarlane.github.io/skymachine/" /> 
-        <meta property="og:title" content="Skymachine" />
-        <meta property="og:description" content="Download a free track by Skymachine!"/> 
-    </head>
-    <body>
-        <div id='gradient'></div>
-        <div id="content">
-            <div class="top">
-                <div class="title"></div>
-                <div class="subtitle"></div>
-            </div>        
-            <div class="bottom">        
-                <div class="links">
-                    <a class="link facebook" href="https://www.facebook.com/pages/Skymachine/591767970875248" target="_blank"></a>
-                    <a class="link instagram" href="http://instagram.com/skymachinemusic" target="_blank"></a>
-                    <a class="link mail" href="mailto:skymachinemusic@gmail.com?Subject=Hello%20there!" target="_blank"></a>
-                </div>
-            </div>
+<link rel="shortcut icon" href="/favicon.png" type="image/png" />
 
-            <div class="spacer">
-                <div class="videoWrapper">
-                    <iframe width="583" height="480" src="https://www.youtube.com/embed/SODc_OipAKQ?rel=0&hd=1&showinfo=0" frameborder="0" allowfullscreen></iframe>
-                </div>
-            </div>
+<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="css/stylenewest.css" />
+<script type="text/javascript" src="js/lib/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="js/skymachine.js"></script>
+<script type="text/javascript" src="js/application.js"></script>
 
-            <div class="stripe shareWrapper">
-                <div class="header">Share to download 'getaway'</div>      
-                <div class="shareme">
-                    <a id="share-link" href="javascript:void(0)">
-                        Click to share
-                    </a>
-                </div>
-            </div>
-        </div>
-    </body>
+<!-- The following are Facebook open graph metadata tags, and -->
+<!-- determine how the page looks when shared on Facebook -->
+<meta property="og:url" content="http://lukemcfarlane.github.io/skymachine/" />
+<meta property="og:title" content="Skymachine" />
+<meta property="og:description" content="Download Getaway"/>
+
+
+<!-- The following is the share count button at the bottom of the page but I -->
+<!-- need to stop it from opening another window and conflicting with the other script -->
+<!-- UPDATE 20/1/2015 Luke Paul has fixed this now fingers crossed -->
+<!-- <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "89aa711d-1241-4b30-a2d7-09182edb5c87", doNotHash: true, doNotCopy: true, hashAddressBar: false});</script>-->
+
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-58552660-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+</head>
+<body>
+<div id="fb-root"></div>
+<div id='gradient'></div>
+<div id="content">
+<div class="top">
+<div class="title"></div>
+<div class="subtitle"></div>
+</div>
+<div class="bottom">
+<div class="links">
+<a class="link facebook" href="https://www.facebook.com/pages/Skymachine/591767970875248" target="_blank"></a>
+<a class="link instagram" href="http://instagram.com/skymachinemusic" target="_blank"></a>
+<a class="link itunes" href="https://itunes.apple.com/artist/skymachine" target="_blank"></a>
+<a class="link youtube" href="https://www.youtube.com/watch?v=HDkns6dU2UM" target="_blank"></a>
+<a class="link mail" href="mailto:skymachinemusic@gmail.com?Subject=Hello%20there!" target="_blank"></a>
+</div>
+</div>
+<div class="video-wrapper">
+<div class="aspect-ratio">
+<iframe width="803.76" height="480" src="http://youtube.com/embed/PiKj5Ltn6vg?rel=0&hd=1&showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+
+<div class="stripe shareWrapper">
+<div class="header">Click the button below to share and download 'Land of Black Gold'</div>
+<div class="shareme">
+<a id="share-link" href="javascript:void(0)">
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+<div id="share-button">
+<div class="fb-image">
+<i class="pluginButtonIcon"></i>
+<span>Share</span>
+</div>
+</div>
+</td>
+<td>
+<div>
+<div id="share-count"><span></span></div>
+<div class="share-nibs"><s></s><i></i></div>
+</div>
+</td>
+</table>
+</div>
+</div>
+</div>
+</div>
+</body>
 </html>
